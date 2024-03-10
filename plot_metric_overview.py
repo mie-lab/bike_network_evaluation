@@ -63,8 +63,6 @@ def main():
     fig, _ = plot_overlapping_metrics(s1_metrics, s2_metrics, s3_metrics, colors[:3], 6, 4)
     fig.savefig(os.path.join(out_dir, 'overlapping_metrics.png'))
 
-    plt.show()
-
 
 if __name__ == "__main__":
     main()
