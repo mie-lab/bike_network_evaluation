@@ -1,0 +1,6 @@
+paths.ini
+*.bat
+__pycache__/
+
+# Ignore PyCharm files
+.idea/

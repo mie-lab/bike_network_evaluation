@@ -1,0 +1,2085 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/agrisiute/ontologies/2023/7/untitled-ontology-25/"
+     xml:base="http://www.semanticweb.org/agrisiute/ontologies/2023/7/untitled-ontology-25/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:om-2="http://www.ontology-of-units-of-measure.org/resource/om-2/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://ebikecity.com/ontologies/nemo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/LaTeXCommand -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/LaTeXCommand"/>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/LaTeXSymbol -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/LaTeXSymbol"/>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/alternativeLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/alternativeLabel"/>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/alternativeSymbol -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/alternativeSymbol"/>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/longcomment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/longcomment"/>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/symbol -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/symbol"/>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/unofficialAbbreviation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/unofficialAbbreviation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#assessedIn -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#assessedIn">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+        <rdfs:range rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#definedBy -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#definedBy">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#Weight"/>
+        <rdfs:range rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#hasMeasurementScale -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#hasMeasurementScale">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+        <rdfs:range rdf:resource="http://ebikecity.com/ontologies/nemo#MeasurementScale"/>
+        <owl:propertyDisjointWith rdf:resource="http://ebikecity.com/ontologies/nemo#hasScoringFunction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#hasScoringFunction -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#hasScoringFunction">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMethod"/>
+        <rdfs:range rdf:resource="http://ebikecity.com/ontologies/nemo#ScoringFunction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#hasSource">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+        <rdfs:range rdf:resource="http://ebikecity.com/ontologies/nemo#DataSource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#mapsToFeature -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#mapsToFeature">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+        <rdfs:range rdf:resource="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#measuredWithinBuffer -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#measuredWithinBuffer">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+        <rdfs:range rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Distance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#measures -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#measures">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+        <rdfs:range rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#usedIn -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#usedIn">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+        <rdfs:range rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#weightsBy -->
+
+    <owl:ObjectProperty rdf:about="http://ebikecity.com/ontologies/nemo#weightsBy">
+        <rdfs:domain rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+        <rdfs:range rdf:resource="http://ebikecity.com/ontologies/nemo#Weight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Measure"/>
+        <rdfs:range rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Unit"/>
+        <rdfs:label xml:lang="en">has unit</rdfs:label>
+        <rdfs:label xml:lang="ja">単位を持つ</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/hasValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/hasValue">
+        <rdfs:domain rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Quantity"/>
+        <rdfs:range rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Measure"/>
+        <rdfs:label xml:lang="en">has value</rdfs:label>
+        <rdfs:label xml:lang="ja">値を持つ</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Measure"/>
+        <rdfs:label xml:lang="en">has numerical value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Accessibility -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Accessibility">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#AdvisoryAndMandatoryBikeLaneShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#AdvisoryAndMandatoryBikeLaneShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#AirPollutantConcentration -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#AirPollutantConcentration">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#AirQuality -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#AirQuality">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#AirTemperature -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#AirTemperature">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Amenity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Amenity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ArcadeDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ArcadeDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Area -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Area">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Attractiveness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Attractiveness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Beauty -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Beauty">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Benefit -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Benefit">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BetweenessCentrality -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BetweenessCentrality">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#GraphMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BicycleLawsPromotion -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BicycleLawsPromotion">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BicyclePolicyDissemination -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BicyclePolicyDissemination">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BicycleRidingEducation -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BicycleRidingEducation">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeAndCarSpeedDifference -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeAndCarSpeedDifference">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeAndRoadNetworkLengthRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeAndRoadNetworkLengthRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeFacilityAndBikeNetworkLengthRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeFacilityAndBikeNetworkLengthRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeFriendlyIntersectionDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeFriendlyIntersectionDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneExclusiveness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneExclusiveness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#CompositeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneIntersectionDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneIntersectionDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLanePresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLanePresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneSurfaceCondition -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneSurfaceCondition">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneSurfaceType -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneSurfaceType">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneType -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneType">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneTypeAndSurfaceCondition -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneTypeAndSurfaceCondition">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#CompositeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneTypeAndTrafficVolumeRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneTypeAndTrafficVolumeRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#CompositeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneWidth -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneWidth">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeLaneWithSideParkingLengthAndNetworkLengthRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeLaneWithSideParkingLengthAndNetworkLengthRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeNetworkLength -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeNetworkLength">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeParkingDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeParkingDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeParkingPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeParkingPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeParkingType -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeParkingType">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeParkingUtilisation -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeParkingUtilisation">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikePathAndLaneIntersectionDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikePathAndLaneIntersectionDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikePathIntersectionDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikePathIntersectionDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeRouteSeparantionPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeRouteSeparantionPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeSharingAndServiceFacilityDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeSharingAndServiceFacilityDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#CompositeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeSharingStationDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeSharingStationDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeSpeed -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeSpeed">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeTrafficFlow -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeTrafficFlow">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BikeandCarTravelTimeRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BikeandCarTravelTimeRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BreakingFrequency -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BreakingFrequency">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BuildingCondition -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BuildingCondition">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BusAndCarTrafficVolumeRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BusAndCarTrafficVolumeRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BusRouteAndRoadLengthRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BusRouteAndRoadLengthRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#BusTrafficFlow -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#BusTrafficFlow">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#CarLaneCount -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#CarLaneCount">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Centrality -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Centrality">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Choice -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Choice">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#SpaceSyntaxMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Cleanliness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Cleanliness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Coherence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Coherence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#CollectorRoadShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#CollectorRoadShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#CollisionAndBikeTripRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#CollisionAndBikeTripRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Comfort -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Comfort">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Completeness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Completeness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Complexity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Complexity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#CompositeMetric -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#CompositeMetric">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Conflictness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Conflictness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Connectivity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Connectivity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ConnectivityMetric -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ConnectivityMetric">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#SpaceSyntaxMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ContextualMetric -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ContextualMetric">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Continuity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Continuity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Cost -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Cost">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#CrimePresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#CrimePresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#CrosswalkPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#CrosswalkPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#CulDeSacDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#CulDeSacDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#CurbCutPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#CurbCutPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DailyRoutineDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DailyRoutineDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Danger -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Danger">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DataSource -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DataSource"/>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DegreeOfEnforcement -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DegreeOfEnforcement">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DegreeOfGreenery -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DegreeOfGreenery">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Depth -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Depth">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#SpaceSyntaxMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DestinationDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DestinationDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DetourFactor -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DetourFactor">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Directness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Directness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Discomfort -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Discomfort">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DistanceToBikeLaneWithExclusiveness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DistanceToBikeLaneWithExclusiveness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DistanceToBikeLaneWithoutExclusiveness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DistanceToBikeLaneWithoutExclusiveness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DistanceToBikeSharingStation -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DistanceToBikeSharingStation">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DistanceToIntersection -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DistanceToIntersection">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DistanceToSideParking -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DistanceToSideParking">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DistanceToTrafficFacility -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DistanceToTrafficFacility">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#DistancetoBikeParking -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#DistancetoBikeParking">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Edge -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Edge">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Efficiency -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Efficiency">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#EmployementDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#EmployementDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#EvaluationCriterion -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#EvaluationMethod -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#EvaluationMethod"/>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#EvaluationMetric -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#EvaluationMetric">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ebikecity.com/ontologies/nemo#mapsToFeature"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ebikecity.com/ontologies/nemo#usedIn"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMethod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ebikecity.com/ontologies/nemo#hasMeasurementScale"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ebikecity.com/ontologies/nemo#MeasurementScale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ebikecity.com/ontologies/nemo#hasSource"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ebikecity.com/ontologies/nemo#DataSource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#GraphMetric -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#GraphMetric">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#GreenPathShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#GreenPathShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#GreenSpaceShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#GreenSpaceShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#GreeneryPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#GreeneryPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#GridCell -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#GridCell">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#HighComfortBikeNetworkDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#HighComfortBikeNetworkDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#HighwayAndRoadDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#HighwayAndRoadDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#HorisontalToVerticalElementsRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#HorisontalToVerticalElementsRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#HouseholdDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#HouseholdDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#IllegalSideParkingDistance -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#IllegalSideParkingDistance">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Illuminance -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Illuminance">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#IndependentCycleCount -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#IndependentCycleCount">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#GraphMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#InfrastructuralMetric -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#InstitutionalPromotion -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#InstitutionalPromotion">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Integration -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Integration">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#SpaceSyntaxMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Intersection -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Intersection">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#IntersectionDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#IntersectionDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#IntersectionType -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#IntersectionType">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#IntersectionTypeAndIntersectionDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#IntersectionTypeAndIntersectionDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#CompositeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#IntersectionWithLightingDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#IntersectionWithLightingDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#IntersectionWithoutLightingDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#IntersectionWithoutLightingDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#LandUseMix -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#LandUseMix">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#LevelOfStress -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#LevelOfStress">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#CompositeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#LightingDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#LightingDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#LightingPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#LightingPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Linearity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Linearity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#LinkLength -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#LinkLength">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#LinkNodeRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#LinkNodeRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#GraphMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#LocalRoadShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#LocalRoadShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#MainRoadWithoutBikeLaneDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#MainRoadWithoutBikeLaneDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#MaleCommuterRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#MaleCommuterRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#MeasurementScale -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#MeasurementScale"/>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ModeMetric -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ModeMetric">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#MorphologicalMetric -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#MorphologicalMetric">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#MotorcycleTrafficFlow -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#MotorcycleTrafficFlow">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#MotorisedTrafficSpeed -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#MotorisedTrafficSpeed">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#MotorisedVehicleCount -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#MotorisedVehicleCount">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Navigability -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Navigability">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Network -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Network">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Node -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Node">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#NodeDegree -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#NodeDegree">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#GraphMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#NodeToNetworkLengthRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#NodeToNetworkLengthRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#NoiseLevel -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#NoiseLevel">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#NonCarCommuterRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#NonCarCommuterRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ObstaclePresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ObstaclePresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#OffRoadBikeLandAndRouteShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#OffRoadBikeLandAndRouteShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#OfficeBikeNetworkShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#OfficeBikeNetworkShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#OzoneConcentration -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#OzoneConcentration">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ParkDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ParkDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Path -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Path">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PavementType -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PavementType">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PedestrianTrafficFlow -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PedestrianTrafficFlow">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedAirQuality -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedAirQuality">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedBeauty -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedBeauty">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedBuildingDesignAttractiveness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedBuildingDesignAttractiveness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedCleanliness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedCleanliness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedLawEnforcement -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedLawEnforcement">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedMixedTrafficConflicts -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedMixedTrafficConflicts">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedSidewalkSurfaceCondition -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedSidewalkSurfaceCondition">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedTrafficConflictness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedTrafficConflictness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedTrafficSmoothness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedTrafficSmoothness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PerceivedTrafficSpeed -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PerceivedTrafficSpeed">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PiIndex -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PiIndex">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Point -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Point">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PoliceOfficerPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PoliceOfficerPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PopulationDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PopulationDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PotholePresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PotholePresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ProfessionalCommuterRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ProfessionalCommuterRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PublicBikeServiceAndLandAreaRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PublicBikeServiceAndLandAreaRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#PublicBikeUnavailability -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#PublicBikeUnavailability">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Quality -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Quality">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Rainfall -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Rainfall">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#RelativeDiscomfort -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#RelativeDiscomfort">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#CompositeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#RepresentationFeature -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ResidentialAreaPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ResidentialAreaPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ResidentialAreaShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ResidentialAreaShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ResidentialDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ResidentialDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ResidentialDensityInCentralAreas -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ResidentialDensityInCentralAreas">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#RightTurnDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#RightTurnDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#RoadShoulderWidth -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#RoadShoulderWidth">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#RoadType -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#RoadType">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#RoadTypeAndTrafficVolume -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#RoadTypeAndTrafficVolume">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#CompositeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#RoadWidth -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#RoadWidth">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Route -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Route">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#RepresentationFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Safety -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Safety">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SafetySupportedIntersectionShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SafetySupportedIntersectionShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ScoringFunction -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ScoringFunction"/>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Security -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Security">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SecurityCameraPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SecurityCameraPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SegregatedBikeLanePresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SegregatedBikeLanePresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Segregation -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Segregation">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SeparatedBikeLaneDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SeparatedBikeLaneDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ShortestPathLength -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#ShortestPathLength">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SideParkingDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SideParkingDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SidewalkPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SidewalkPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SidewalkSurfaceType -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SidewalkSurfaceType">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SidewalkWidth -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SidewalkWidth">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SignagePresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SignagePresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SignpostDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SignpostDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Sinuosity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Sinuosity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Slope -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Slope">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#MorphologicalMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SlowStreetShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SlowStreetShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SpaceSyntaxMetric -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SpaceSyntaxMetric">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#GraphMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Spaciousness -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Spaciousness">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SpeedControlDevicePresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SpeedControlDevicePresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#SpeedLimit -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#SpeedLimit">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Stress -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Stress">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Suitability -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Suitability">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#TimeLossAtIntersection -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#TimeLossAtIntersection">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#TrafficCondition -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#TrafficCondition">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#EvaluationCriterion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#TrafficSignalDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#TrafficSignalDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#TrafficSignalOfStopSignPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#TrafficSignalOfStopSignPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#TrafficSignalPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#TrafficSignalPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#TrafficVolume -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#TrafficVolume">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ModeMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Trajectory -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Trajectory">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#TransitFacilityDensity -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#TransitFacilityDensity">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#TransitServiceAreaAndLandAreaRatio -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#TransitServiceAreaAndLandAreaRatio">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#TreeCanopyCoverage -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#TreeCanopyCoverage">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#UrbanVitalityPresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#UrbanVitalityPresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#UtilityPolePresence -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#UtilityPolePresence">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#InfrastructuralMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#WaterSpaceShare -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#WaterSpaceShare">
+        <rdfs:subClassOf rdf:resource="http://ebikecity.com/ontologies/nemo#ContextualMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#Weight -->
+
+    <owl:Class rdf:about="http://ebikecity.com/ontologies/nemo#Weight"/>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/Distance -->
+
+    <owl:Class rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/Distance">
+        <rdfs:subClassOf rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Length"/>
+        <om-2:symbol>d</om-2:symbol>
+        <rdfs:label xml:lang="nl">afstand</rdfs:label>
+        <rdfs:label xml:lang="en">distance</rdfs:label>
+        <rdfs:label xml:lang="zh">距离</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/Length -->
+
+    <owl:Class rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/Length">
+        <rdfs:subClassOf rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/LengthUnit -->
+
+    <owl:Class rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/LengthUnit">
+        <rdfs:subClassOf rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Unit"/>
+        <rdfs:label xml:lang="en">length unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/Measure -->
+
+    <owl:Class rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/Measure">
+        <rdfs:comment xml:lang="en">A measure combines a number to a unit of measure. For example, &quot;3 m&quot; is a measure.</rdfs:comment>
+        <rdfs:label xml:lang="en">measure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/Quantity -->
+
+    <owl:Class rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/Quantity"/>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/Unit -->
+
+    <owl:Class rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/Unit"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#interval -->
+
+    <owl:NamedIndividual rdf:about="http://ebikecity.com/ontologies/nemo#interval">
+        <rdf:type rdf:resource="http://ebikecity.com/ontologies/nemo#MeasurementScale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#nominal -->
+
+    <owl:NamedIndividual rdf:about="http://ebikecity.com/ontologies/nemo#nominal">
+        <rdf:type rdf:resource="http://ebikecity.com/ontologies/nemo#MeasurementScale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ordinal -->
+
+    <owl:NamedIndividual rdf:about="http://ebikecity.com/ontologies/nemo#ordinal">
+        <rdf:type rdf:resource="http://ebikecity.com/ontologies/nemo#MeasurementScale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ebikecity.com/ontologies/nemo#ratio -->
+
+    <owl:NamedIndividual rdf:about="http://ebikecity.com/ontologies/nemo#ratio">
+        <rdf:type rdf:resource="http://ebikecity.com/ontologies/nemo#MeasurementScale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/metre -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/metre">
+        <rdf:type rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Unit"/>
+        <om-2:alternativeLabel xml:lang="en">meter</om-2:alternativeLabel>
+        <om-2:longcomment>The metre is a unit of length defined as the length of the path travelled by light in vacuum during a time interval of 1/299 792 458 of a second. The metre is a base unit in the International System of Units.</om-2:longcomment>
+        <om-2:symbol>m</om-2:symbol>
+        <rdfs:comment xml:lang="en">The metre is a unit of length defined as the length of the path travelled by light in vacuum during a time interval of 1/299 792 458 of a second.</rdfs:comment>
+        <rdfs:label xml:lang="nl">meter</rdfs:label>
+        <rdfs:label xml:lang="en">metre</rdfs:label>
+        <rdfs:label xml:lang="zh">米</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/Illuminance">
+        <om-2:alternativeLabel xml:lang="en">illumination</om-2:alternativeLabel>
+        <om-2:alternativeSymbol>Φ_v</om-2:alternativeSymbol>
+        <om-2:symbol>Φ</om-2:symbol>
+        <rdfs:comment xml:lang="en">Illuminance is the total luminous flux incident on a surface per unit area.</rdfs:comment>
+        <rdfs:label xml:lang="en">illuminance</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/Velocity">
+        <om-2:alternativeSymbol>v</om-2:alternativeSymbol>
+        <om-2:alternativeSymbol>w</om-2:alternativeSymbol>
+        <om-2:symbol>u</om-2:symbol>
+        <rdfs:comment xml:lang="en">Velocity is the rate of change of position.</rdfs:comment>
+        <rdfs:label xml:lang="nl">snelheid (vector)</rdfs:label>
+        <rdfs:label xml:lang="en">velocity</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
