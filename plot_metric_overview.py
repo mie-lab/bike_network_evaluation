@@ -1,7 +1,6 @@
 import os
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import configparser
 from metric_visualisation import (get_metrics, create_embedding, plot_thematic_metric_embedding_heatmap,
                                   plot_metric_embedding_heatmap, plot_metric_criteria_occurrence_distribution,
@@ -36,7 +35,7 @@ def main():
     fig, _ = plot_aggregation_metric_distribution(metrics, colors, 6, 6)
     fig.savefig(os.path.join(out_dir, 'aggregation_metric_distribution.png'))
 
-    fig, _ = plot_measurement_scale_distribution(metrics, colors, 6, 6)
+    fig, _ = plot_measurement_scale_distribution(metrics, colors, 3, 6)
     fig.savefig(os.path.join(out_dir, 'measurement_scale_distribution.png'))
 
     # Scenarios
@@ -51,7 +50,6 @@ def main():
     fig.savefig(os.path.join(out_dir, 'scenario_1.png'))
 
     # scenario 2
-
     s2_metrics, fig, _ = plot_scenario_2(twice_metrics, features, thematic_metrics, criteria, labels, colors, 15, 5)
     fig.savefig(os.path.join(out_dir, 'scenario_2.png'))
 
@@ -62,7 +60,6 @@ def main():
     # scenario overlap
     fig, _ = plot_overlapping_metrics(s1_metrics, s2_metrics, s3_metrics, colors[:3], 6, 4)
     fig.savefig(os.path.join(out_dir, 'overlapping_metrics.png'))
-
 
 if __name__ == "__main__":
     main()

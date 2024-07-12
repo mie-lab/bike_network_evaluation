@@ -92,6 +92,10 @@ def plot_thematic_metric_embedding_heatmap(embedding_orig, x, y):
             if embedding.loc[embedding.index[i], embedding.columns[j]] > 0:
                 ax.text(i, j, round(embedding.loc[embedding.index[i], embedding.columns[j]]),
                         ha="center", va="center", color='black', size=12, alpha=0.9)
+            if embedding.loc[embedding.index[i], embedding.columns[j]] > 13:
+                ax.text(i, j, round(embedding.loc[embedding.index[i], embedding.columns[j]]),
+                        ha="center", va="center", color='white', size=12, alpha=0.9)
+
 
     # Add row sums to the right of the heatmap
     for i, row_sum in enumerate(row_sums):
@@ -131,10 +135,10 @@ def plot_metric_embedding_heatmap(embedding_orig, x, y):
 
     fig, ax = plt.subplots(figsize=(x, y))
     ax.imshow(embedding, aspect='auto', cmap=my_cmap, vmin=0.01, interpolation='nearest')
-    ax.set_xticks(np.arange(embedding.shape[1]), labels=embedding.columns, rotation=90, size=15)
-    ax.set_yticks(np.arange(embedding.shape[0]), labels=embedding.index, size=15)
-    ax.set_ylabel('Frequent evaluation metrics', size=20)
-    ax.set_xlabel('Frequent evaluation criteria', size=20)
+    ax.set_xticks(np.arange(embedding.shape[1]), labels=embedding.columns, rotation=90, size=14)
+    ax.set_yticks(np.arange(embedding.shape[0]), labels=embedding.index, size=14)
+    ax.set_ylabel('Frequent evaluation metrics', size=14, weight='bold')
+    ax.set_xlabel('Frequent evaluation criteria', size=14, weight='bold')
     ax.yaxis.set_minor_locator(plt.MultipleLocator(1 / 2))
     ax.xaxis.set_minor_locator(plt.MultipleLocator(1 / 2))
     ax.tick_params(axis='both', which='minor', length=0)
@@ -153,6 +157,9 @@ def plot_metric_embedding_heatmap(embedding_orig, x, y):
             if embedding.loc[embedding.index[i], embedding.columns[j]] > 0:
                 ax.text(j, i, round(embedding.loc[embedding.index[i], embedding.columns[j]]), ha="center", va="center",
                         color='black', alpha=0.9, size=13)
+            if embedding.loc[embedding.index[i], embedding.columns[j]] > 4:
+                ax.text(j, i, round(embedding.loc[embedding.index[i], embedding.columns[j]]), ha="center", va="center",
+                        color='white', alpha=0.9, size=13)
 
     ax.grid(which='minor', color='grey', linewidth=0.1)
     fig.tight_layout()
@@ -176,16 +183,14 @@ def plot_metric_criteria_occurrence_distribution(embedding, colors, x, y):
                   label=range(1, len(metric_occurence) + 1))
 
     ax.set_xlabel('No. of unique criteria', weight='bold', size=14)
-    ax.set_ylabel('No. of metrics linked to criteria', weight='bold', size=14)
+    ax.set_ylabel('No. of metrics', weight='bold', size=14)
+    ax.xaxis.set_major_locator(plt.NullLocator())
     ax.legend(fontsize=12)
     ax.grid(True, linewidth=0.3)
 
     # Iterating over the bars one-by-one
-    for bar in bars:
-        ax.annotate('{}'.format(bar.get_height()),
-                    xy=(bar.get_x() + bar.get_width() / 2, bar.get_height()), xytext=(0, 3),
-                    textcoords="offset points", ha='center', size=12, va='bottom')
-    ax.xaxis.set_major_locator(plt.NullLocator())
+    annotate_bars(bars, ax)
+    fig.tight_layout()
 
     return fig, ax
 
@@ -209,20 +214,29 @@ def plot_aggregation_metric_distribution(metrics, colors, x, y):
     f_metrics = dict(sorted(f_metrics.items(), key=lambda item: item[1], reverse=True))
     bars = ax.bar(f_metrics.keys(), f_metrics.values(), color=colors, label=f_metrics.keys())
     ax.set_xlabel('Representation feature', weight='bold', size=14)
-    ax.set_ylabel('No. of distinct metrics', weight='bold', size=14)
+    ax.set_ylabel('No. of metrics', weight='bold', size=14)
     ax.xaxis.set_major_locator(plt.NullLocator())
     ax.grid(True, linewidth=0.3)
     ax.legend(fontsize=12)
 
     # Iterating over the bars one-by-one
-    for bar in bars:
-        ax.annotate('{}'.format(bar.get_height()),
-                    xy=(bar.get_x() + bar.get_width() / 2, bar.get_height()), xytext=(0, 3),
-                    textcoords="offset points", ha='center', size=12, va='bottom')
+    annotate_bars(bars, ax)
     fig.tight_layout()
 
     return fig, ax
 
+
+def annotate_bars(bars, ax):
+    """
+    Annotate the bars with their values.
+    :param bars:
+    :param ax:
+    :return:
+    """
+    for bar in bars:
+        ax.annotate('{}'.format(bar.get_height()),
+                    xy=(bar.get_x() + bar.get_width() / 2, bar.get_height()), xytext=(0, 3),
+                    textcoords="offset points", ha='center', size=12, va='bottom')
 
 def plot_measurement_scale_distribution(metrics, colors, x, y):
     """
@@ -236,20 +250,20 @@ def plot_measurement_scale_distribution(metrics, colors, x, y):
     for m_type in metrics['measurement_scale'].dropna().unique():
         m_metric[m_type] = metrics.loc[metrics['measurement_scale'] == m_type, :].groupby(by='metric_type')[
             'method'].nunique().sum()
+
     fig, ax = plt.subplots(1, 1, figsize=(x, y))
+
     m_metric = dict(sorted(m_metric.items(), key=lambda item: item[1], reverse=True))
     bars = ax.bar(m_metric.keys(), m_metric.values(), color=colors, label=m_metric.keys())
     ax.set_xlabel('Measurement scales', size=14, weight='bold')
-    ax.set_ylabel('No. of metrics', size=14, weight='bold')
+    ax.set_ylabel('No. of metrics', weight='bold', size=14)
     ax.xaxis.set_major_locator(plt.NullLocator())
-    ax.legend(fontsize=12)
     ax.grid(True, linewidth=0.3)
+    ax.legend(fontsize=12)
 
     # Iterating over the bars one-by-one
-    for bar in bars:
-        ax.annotate('{}'.format(bar.get_height()),
-                    xy=(bar.get_x() + bar.get_width() / 2, bar.get_height()), xytext=(0, 3),
-                    textcoords="offset points", ha='center', size=12, va='bottom')
+    annotate_bars(bars, ax)
+    fig.tight_layout()
     return fig, ax
 
 
@@ -276,7 +290,7 @@ def plot_scenario_1(metrics, features, thematic_metrics, criteria, labels, color
     col_maximum = 25
     ylabels_rep = ['Representation Feature (goal focus)', 'Criteria', 'Thematic Metric']
     fig, axs = plt.subplots(1, 3, figsize=(x, y), tight_layout=True)
-    fig.suptitle(f'Scenario {scenario}', size=16)
+    fig.suptitle(f'Scenario {scenario}', size=16, weight='bold')
     for column in range(3):
         ax = axs[column]
         if column == 0:
@@ -323,13 +337,6 @@ def plot_scenario_1(metrics, features, thematic_metrics, criteria, labels, color
             cur_max = left.max()
         ax.set_xlim(left=0, right=cur_max + cur_max * 0.1)
         ax.grid(True, linewidth=0.2)
-        if column == 0:
-            # Iterating over the bars one-by-one
-            for bar in bars:
-                if int(bar.get_width()) > 0:
-                    ax.annotate('{}'.format(int(bar.get_width())),
-                                xy=(bar.get_width(), bar.get_y() + bar.get_height() / 2),
-                                xytext=(2, 0), textcoords="offset points", ha='left', size=12, va='center')
 
     return s1_metrics, fig, axs
 
@@ -358,7 +365,7 @@ def plot_scenario_2(metrics, features, thematic_metrics, criteria, labels, color
     criteria_colors = dict(zip(criteria_index, colors[:5]))
 
     fig, axs = plt.subplots(1, 3, figsize=(x, y), tight_layout=True)
-    fig.suptitle(f'Scenario {scenario}', size=16)
+    fig.suptitle(f'Scenario {scenario}', size=16, weight='bold')
     relevant_criteria = []
     for column in range(3):
         ax = axs[column]
@@ -397,6 +404,7 @@ def plot_scenario_2(metrics, features, thematic_metrics, criteria, labels, color
             for criteria, cur_counts in counts.items():
                 bars = ax.barh(labels, cur_counts.to_numpy(), left=left, color=criteria_colors[criteria])
                 left += cur_counts.to_numpy()
+
         ax.set_title(ylabels_rep[column], size=12)
         ax.set_xlabel('No. of metric instances', size=12)
         ax.set_xlim((0, col_maximum + 0.1 * col_maximum))
@@ -407,13 +415,6 @@ def plot_scenario_2(metrics, features, thematic_metrics, criteria, labels, color
             cur_max = left.max()
         ax.set_xlim(left=0, right=cur_max + cur_max * 0.1)
         ax.grid(True, linewidth=0.2)
-        if column == 0:
-            # Iterating over the bars one-by-one
-            for bar in bars:
-                if int(bar.get_width()) > 0:
-                    ax.annotate('{}'.format(int(bar.get_width())),
-                                xy=(bar.get_width(), bar.get_y() + bar.get_height() / 2),
-                                xytext=(2, 0), textcoords="offset points", ha='left', size=12, va='center')
 
     return s2_metrics, fig, axs
 
@@ -444,7 +445,7 @@ def plot_scenario_3(metrics, features, thematic_metrics, criteria, labels, color
     col_maximum = 30
     ylabels_rep = ['Thematic Metric (goal focus)', 'Representation Feature', 'Criteria']
     fig, axs = plt.subplots(1, 3, figsize=(x, y), tight_layout=True)
-    fig.suptitle(f'Scenario {scenario}', size=16)
+    fig.suptitle(f'Scenario {scenario}', size=16, weight='bold')
     for column in range(3):
         ax = axs[column]
         if column == 0:
@@ -489,13 +490,7 @@ def plot_scenario_3(metrics, features, thematic_metrics, criteria, labels, color
         else:
             cur_max = left.max()
         ax.set_xlim(left=0, right=cur_max + cur_max * 0.1)
-        if column == 0:
-            # Iterating over the bars one-by-one
-            for bar in bars:
-                if int(bar.get_width()) > 0:
-                    ax.annotate('{}'.format(int(bar.get_width())),
-                                xy=(bar.get_width(), bar.get_y() + bar.get_height() / 2),
-                                xytext=(2, 0), textcoords="offset points", ha='left', size=12, va='center')
+
     return s3_metrics, fig, axs
 
 
